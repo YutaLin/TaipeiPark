@@ -13,5 +13,6 @@
 @interface APIManager : NSObject
 
 + (id)shared;
+- (void)postWithParameters:(NSDictionary *)parameters completion:(void (^)(BOOL finished, id data))completion failure:(void (^)(NSError *error))failure;
 
 @end

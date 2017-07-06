@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5572C52F1F0E994A00F71BDE /* ParkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5572C52D1F0E994A00F71BDE /* ParkTableViewCell.m */; };
+		5572C5301F0E994A00F71BDE /* ParkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5572C52E1F0E994A00F71BDE /* ParkTableViewCell.xib */; };
 		55A49E4B1F0E80170090C28C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A49E4A1F0E80170090C28C /* main.m */; };
 		55A49E4E1F0E80170090C28C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A49E4D1F0E80170090C28C /* AppDelegate.m */; };
 		55A49E511F0E80170090C28C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A49E501F0E80170090C28C /* ViewController.m */; };
@@ -14,9 +16,13 @@
 		55A49E561F0E80170090C28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A49E551F0E80170090C28C /* Assets.xcassets */; };
 		55A49E591F0E80170090C28C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A49E571F0E80170090C28C /* LaunchScreen.storyboard */; };
 		55A49E631F0E80450090C28C /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A49E621F0E80450090C28C /* APIManager.m */; };
+		55A49E681F0E86520090C28C /* ParkDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A49E671F0E86520090C28C /* ParkDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5572C52C1F0E994A00F71BDE /* ParkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParkTableViewCell.h; path = Cell/ParkTableViewCell.h; sourceTree = "<group>"; };
+		5572C52D1F0E994A00F71BDE /* ParkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParkTableViewCell.m; path = Cell/ParkTableViewCell.m; sourceTree = "<group>"; };
+		5572C52E1F0E994A00F71BDE /* ParkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ParkTableViewCell.xib; path = Cell/ParkTableViewCell.xib; sourceTree = "<group>"; };
 		55A49E461F0E80170090C28C /* TaipeiPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaipeiPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A49E4A1F0E80170090C28C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55A49E4C1F0E80170090C28C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,6 +35,8 @@
 		55A49E5A1F0E80170090C28C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A49E611F0E80450090C28C /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = Manager/APIManager.h; sourceTree = "<group>"; };
 		55A49E621F0E80450090C28C /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = Manager/APIManager.m; sourceTree = "<group>"; };
+		55A49E661F0E86520090C28C /* ParkDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParkDataModel.h; path = Model/ParkDataModel.h; sourceTree = "<group>"; };
+		55A49E671F0E86520090C28C /* ParkDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParkDataModel.m; path = Model/ParkDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5572C52A1F0E992700F71BDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55A49E4F1F0E80170090C28C /* ViewController.h */,
+				55A49E501F0E80170090C28C /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5572C52B1F0E993200F71BDE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5572C52C1F0E994A00F71BDE /* ParkTableViewCell.h */,
+				5572C52D1F0E994A00F71BDE /* ParkTableViewCell.m */,
+				5572C52E1F0E994A00F71BDE /* ParkTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		55A49E3D1F0E80170090C28C = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +88,12 @@
 		55A49E481F0E80170090C28C /* TaipeiPark */ = {
 			isa = PBXGroup;
 			children = (
+				5572C52B1F0E993200F71BDE /* Cell */,
+				5572C52A1F0E992700F71BDE /* ViewController */,
 				55A49E651F0E85CB0090C28C /* Model */,
 				55A49E601F0E80270090C28C /* Manager */,
 				55A49E4C1F0E80170090C28C /* AppDelegate.h */,
 				55A49E4D1F0E80170090C28C /* AppDelegate.m */,
-				55A49E4F1F0E80170090C28C /* ViewController.h */,
-				55A49E501F0E80170090C28C /* ViewController.m */,
 				55A49E521F0E80170090C28C /* Main.storyboard */,
 				55A49E551F0E80170090C28C /* Assets.xcassets */,
 				55A49E571F0E80170090C28C /* LaunchScreen.storyboard */,
@@ -96,6 +123,8 @@
 		55A49E651F0E85CB0090C28C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55A49E661F0E86520090C28C /* ParkDataModel.h */,
+				55A49E671F0E86520090C28C /* ParkDataModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -162,6 +191,7 @@
 				55A49E591F0E80170090C28C /* LaunchScreen.storyboard in Resources */,
 				55A49E561F0E80170090C28C /* Assets.xcassets in Resources */,
 				55A49E541F0E80170090C28C /* Main.storyboard in Resources */,
+				5572C5301F0E994A00F71BDE /* ParkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +205,9 @@
 				55A49E631F0E80450090C28C /* APIManager.m in Sources */,
 				55A49E511F0E80170090C28C /* ViewController.m in Sources */,
 				55A49E4E1F0E80170090C28C /* AppDelegate.m in Sources */,
+				55A49E681F0E86520090C28C /* ParkDataModel.m in Sources */,
 				55A49E4B1F0E80170090C28C /* main.m in Sources */,
+				5572C52F1F0E994A00F71BDE /* ParkTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +366,7 @@
 				55A49E5F1F0E80170090C28C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

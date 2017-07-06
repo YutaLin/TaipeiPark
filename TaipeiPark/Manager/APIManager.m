@@ -8,11 +8,9 @@
 
 #import "APIManager.h"
 
-static NSString *const PARK = @"?scope=resourceAquire&rid=bf073841-c734-49bf-a97f-3757a6013812";
-
 @interface APIManager()
 
-@property (strong, nonatomic) NSURL *baseURL;
+@property (strong, nonatomic) NSString *baseURL;
 
 @end
 
@@ -29,27 +27,51 @@ static NSString *const PARK = @"?scope=resourceAquire&rid=bf073841-c734-49bf-a97
     return _sharedObject;
 }
 
-- (instancetype)initWithBaseURL:(NSURL *)url {
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.baseURL = url;
+        self.baseURL = serverDomainName;
     }
     return self;
 }
 
-- (void)postWithURL:(NSString *)url completion:(void (^)(BOOL finished, id data))completion failure:(void (^)(NSError *error))failure  {
-    NSURL *requestURL = [NSURL URLWithString:url relativeToURL:self.baseURL];
+- (void)postWithParameters:(NSDictionary *)parameters completion:(void (^)(BOOL finished, id data))completion failure:(void (^)(NSError *error))failure {
+    NSString *requestURLString = [self convertToQueries:parameters];
+    NSCharacterSet *allowedCharacters = [NSCharacterSet URLFragmentAllowedCharacterSet];
+    NSURL *requestURL = [NSURL URLWithString:[requestURLString stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters]];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:requestURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:30];
     
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             failure(error);
         } else {
-            completion(YES, data);
+            NSError *jsonError;
+            NSDictionary *dicData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError == nil) {
+                completion(YES, dicData);
+            } else {
+                failure(jsonError);
+            }
         }
     }];
     
     [dataTask resume];
+}
+
+- (NSString *)convertToQueries:(NSDictionary *)parameters {
+    NSMutableString *queries = [[NSMutableString alloc] initWithString:self.baseURL];
+    for (id key in parameters) {
+        NSString *keyString = [key description];
+        NSString *valeuString = [[parameters objectForKey:key] description];
+        
+        if ([queries rangeOfString:@"?"].location == NSNotFound) {
+            [queries appendFormat:@"?%@=%@", keyString, valeuString];
+        } else {
+            [queries appendFormat:@"&%@=%@", keyString, valeuString];
+        }
+    }
+    
+    return queries;
 }
 
 

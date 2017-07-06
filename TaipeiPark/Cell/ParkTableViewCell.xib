@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParkTableViewCell" rowHeight="136" id="KGk-i7-Jjw" customClass="ParkTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-AI-Dk1">
+                        <rect key="frame" x="8" y="8" width="42" height="77"/>
+                        <color key="backgroundColor" red="0.30588235289999999" green="0.72156862749999995" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmA-s6-qxI">
+                        <rect key="frame" x="8" y="116" width="304" height="17"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YF-pN-fMw">
+                        <rect key="frame" x="8" y="85" width="304" height="21"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.59607843140000005" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="FmA-s6-qxI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0N8-eb-8uw"/>
+                    <constraint firstItem="kQx-AI-Dk1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="BSO-88-Acc"/>
+                    <constraint firstAttribute="bottom" secondItem="FmA-s6-qxI" secondAttribute="bottom" constant="2.5" id="FSo-KE-hv9"/>
+                    <constraint firstItem="7YF-pN-fMw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="OBP-1c-mk9"/>
+                    <constraint firstItem="kQx-AI-Dk1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dQ5-cg-nHm"/>
+                    <constraint firstItem="FmA-s6-qxI" firstAttribute="top" secondItem="7YF-pN-fMw" secondAttribute="bottom" constant="10" id="gCa-js-cpZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7YF-pN-fMw" secondAttribute="trailing" id="gG1-fX-3Xu"/>
+                    <constraint firstItem="7YF-pN-fMw" firstAttribute="top" secondItem="kQx-AI-Dk1" secondAttribute="bottom" id="thg-Dw-Ggx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="FmA-s6-qxI" secondAttribute="trailing" id="uLL-Fw-9EL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="parkImageNameLabel" destination="7YF-pN-fMw" id="JKk-KJ-u1a"/>
+                <outlet property="parkIntroductionLabel" destination="FmA-s6-qxI" id="jsq-0e-RfF"/>
+                <outlet property="parkNameLabel" destination="kQx-AI-Dk1" id="zNx-eL-xHZ"/>
+            </connections>
+            <point key="canvasLocation" x="110" y="-8"/>
+        </tableViewCell>
+    </objects>
+</document>
